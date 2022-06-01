@@ -9,14 +9,19 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <!-- Adding the 3D text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component/dist/aframe-text-geometry-component.min.js"></script>
+    <!-- <script src="js/aframe-text-geometry-component.min.js"></script> -->
 </head>
 
 <body style="margin: 0; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-        <a-text value="This content will always face you." look-at="[gps-camera]" scale="50 50 50"
-            gps-entity-place="latitude: 50.831510; longitude: 3.262840;"></a-text>
+        <a-entity text-geometry="value: What's up" look-at="[gps-camera]" scale="50 50 50" gps-entity-place="latitude: 50.831510; longitude: 3.262840;"></a-entity>
+        <!-- <a-text value="This content will always face you." look-at="[gps-camera]" scale="50 50 50" gps-entity-place="latitude: 50.831510; longitude: 3.262840;"></a-text> -->
         <a-camera gps-camera rotation-reader> </a-camera>
+        
     </a-scene>
 </body>
+
 
 </html>
