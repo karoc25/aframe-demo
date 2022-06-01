@@ -5,22 +5,65 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Location-based AR.js demo</title>
+    <title>Image based tracking AR.js demo</title>
+    <!-- import aframe and then ar.js with image tracking / location based features -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!-- Adding the 3D text geometry library -->
-    <script src="https://unpkg.com/aframe-text-geometry-component/dist/aframe-text-geometry-component.min.js"></script>
-    <!-- <script src="js/aframe-text-geometry-component.min.js"></script> -->
+
+    <!-- style for the loader -->
+    <style>
+        .arjs-loader {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arjs-loader div {
+            text-align: center;
+            font-size: 1.25em;
+            color: white;
+        }
+    </style>
 </head>
 
-<body style="margin: 0; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-        <a-entity text-geometry="value: What's up; size: 0.5; height: 0.1;" material="color: #66E1B4" gps-entity-place="latitude: 50.831510; longitude: 3.262840;"></a-entity>
-        <!-- <a-text value="This content will always face you." look-at="[gps-camera]" scale="50 50 50" gps-entity-place="latitude: 50.831510; longitude: 3.262840;"></a-text> -->
-        <a-camera gps-camera rotation-reader> </a-camera>
+<body style="margin : 0px; overflow: hidden;">
+    <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
+    <div class="arjs-loader">
+        <div>Loading AR, please wait...</div>
+    </div>
+
+    <!-- a-frame scene -->
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <!-- a-nft is the anchor that defines an Image Tracking entity -->
+        <!-- on 'url' use the path to the Image Descriptors created before. -->
+        <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
+        <a-nft type="nft" url="./arjs3-image-tracking" smooth="true" smoothCount="10" smoothTolerance=".01"
+            smoothThreshold="5">
+            <!-- DINOSAUR -->
+            <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
+            <!-- <a-entity
+                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+                scale="5 5 5" position="100 100 0">
+            </a-entity> -->
+
+            <!-- <a-box scale="15 25 30" position="100 100 0" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+            <a-entity text="value: Hello World; width: 5," position="2 1.25 -5"></a-entity>
+            <!-- <a-entity text-geometry="value: What's up; size: 0.5; height: 1.6;" look-at="[gps-camera]" material="color: #66E1B4" gps-entity-place="latitude: 50.831510; longitude: 3.262840;"></a-entity> -->
+            <!-- <a-entity geometry="primitive: box; width: 150; height: 300; depth: 3" material="color: red"></a-entity> -->
+
+        </a-nft>
+
+        <!-- static camera that moves according to the device movemenents -->
+        <a-entity camera></a-entity>
     </a-scene>
 </body>
-
 
 </html>
