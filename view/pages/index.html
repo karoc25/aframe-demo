@@ -49,6 +49,7 @@
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
         <a-assets>
+            <p id="text">do you take the dare?</p>
             <img alt="image" id="my-image" src="../../assets/tag-demo.jpg" crossorigin="anonymous">
         </a-assets>
 
@@ -71,8 +72,8 @@
 
             <!-- Using the asset management system. -->
             <a-entity id="parent" rotation="-90 0 0" position=" 50 50 50">
-                <a-text value="Do you take the dare?"></a-text>
-                <!-- <a-image id="child1" src="#my-image" scale="500 500 500"></a-image> -->
+                <a-text src="#text"></a-text>
+                <a-image id="child1" src="#my-image" scale="500 500 500"></a-image>
             </a-entity>
 
 
