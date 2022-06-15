@@ -35,6 +35,10 @@
             font-size: 1.25em;
             color: white;
         }
+
+        .button {
+            z-index: 500;
+        }
     </style>
 </head>
 
@@ -44,13 +48,16 @@
         <div>Loading AR, please wait...</div>
     </div>
 
+    <button class="button">hello i'm a button</button>
+
+
     <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
         <a-assets>
             <p id="text">do you take the dare?</p>
-            <img alt="image" id="my-image" src="../../assets/dareQuestion-01.png" crossorigin="anonymous">
+            <img alt="image" id="my-image" src="../../assets/dareQuestion-01-01.png" crossorigin="anonymous">
         </a-assets>
 
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
@@ -71,7 +78,7 @@
             </a-entity> -->
 
             <!-- Using the asset management system. -->
-            <a-entity id="parent" rotation="-90 0 0" position=" 0 0 3">
+            <a-entity id="parent" rotation="-90 0 0" position=" 500 500 3">
                 <a-image id="child1" src="#my-image" scale="200 200 200"></a-image>
             </a-entity>
 
@@ -82,7 +89,6 @@
         <a-entity camera></a-entity>
 
     </a-scene>
-    <button>hello i'm a button</button>
 </body>
 
 </html>
