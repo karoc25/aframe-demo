@@ -56,6 +56,7 @@
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
+        
         <a-assets>
             <img alt="image" id="my-image" src="../../assets/dareQuestion-01-01.png" crossorigin="anonymous">
         </a-assets>
@@ -78,7 +79,7 @@
             </a-entity> -->
 
             <!-- Using the asset management system. -->
-            <a-entity id="parent" rotation="-90 0 0" position=" 100 150 50">
+            <a-entity id="parent" rotation="-90 0 0" position=" 100 350 50">
                 <a-image id="child1" src="#my-image" scale="300 300 200"></a-image>
             </a-entity>
 
