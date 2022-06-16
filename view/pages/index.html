@@ -56,8 +56,8 @@
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
         <a-assets>
-            <p id="text">do you take the dare?</p>
             <img alt="image" id="my-image" src="../../assets/dareQuestion-01-01.png" crossorigin="anonymous">
+            <img alt="image" id="tag" src="../../assets/tag-demo.jpg" crossorigin="anonymous">
         </a-assets>
 
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
@@ -78,8 +78,9 @@
             </a-entity> -->
 
             <!-- Using the asset management system. -->
-            <a-entity id="parent" rotation="-90 0 0" position=" 100 100 3">
-                <a-image id="child1" src="#my-image" scale="200 200 200"></a-image>
+            <a-entity id="parent" rotation="-90 0 0" position=" 100 200 3">
+                <a-image id="child1" src="#my-image" scale="250 250 250"></a-image>
+                <a-image id="child1" src="#tag" scale="100 100 100"></a-image>
             </a-entity>
 
 
