@@ -17,6 +17,15 @@
 
     <!-- style for the loader -->
     <style>
+
+        .dare__page {
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
         .arjs-loader {
             height: 100%;
             width: 100%;
@@ -36,20 +45,37 @@
             color: white;
         }
 
+
+
         .button {
-            z-index: 500;
+            z-index: 50;
             background-color: red;
+            margin: 0 auto;
+            height: 4rem;
+            width:7rem;
+            position: absolute;
+            top: 75vh;
+            left: 50vw;
+            z-index: 9998;
+            display: flex;
+            transform-origin: center;
+            justify-content: center;
+            align-items: center;
         }
+
+  
+
     </style>
 </head>
 
-<body style="margin : 0px; overflow: hidden;">
+<body class="dare_page" >
+    <!-- style="margin : 0px; overflow: hidden;" -->
     <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
     <div class="arjs-loader">
         <div>Loading AR, please wait...</div>
     </div>
 
-    <button class="button">hello i'm a button</button>
+    <button class="button">close</button>
 
 
     <!-- a-frame scene -->
