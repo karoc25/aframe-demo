@@ -18,6 +18,8 @@
     <!-- style for the loader -->
     <style>
 
+        a-scene { display: block; width: 50%; }
+
         .dare__page {
             margin: 0 auto;
             overflow: hidden;
@@ -70,7 +72,7 @@
             height: 4rem;
             width:7rem;
             top: 75vh;
-            left: 40vw;
+            left: 30vw;
             background-color: yellow;
         }
 
@@ -117,20 +119,24 @@
             url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/gitteneven/ARjs_ImageMarker/main/119938642_3431719803542439_6837326359785887010_o"
             smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5"> -->
         <a-nft type="nft"
-            url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/gitteneven/CARVEAR/main/trackingimageTESTR"
+            url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/gitteneven/CARVE/main/carve"
             smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
-            <!-- <a-nft type="nft" url="../assets/119938642_3431719803542439_6837326359785887010_o" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5"> -->
-            <!-- DINOSAUR -->
-            <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-            <!-- <a-entity
-                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-                scale="5 5 5" position="100 100 0">
-            </a-entity> -->
-
+        
             <!-- Using the asset management system. -->
             <a-entity id="parent" rotation="-90 0 0" position=" 100 100 -250">
                 <a-image id="child1" src="#my-image" scale="300 300 200"></a-image>
+            </a-entity>
+
+
+        </a-nft>
+
+        <a-nft type="nft"
+            url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/gitteneven/DOODLE/main/monalisa"
+            smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        
+            <!-- Using the asset management system. -->
+            <a-entity id="parent2" rotation="-90 0 0" position=" 100 100 -250">
+                <a-image id="child2" src="#my-image" scale="300 300 200"></a-image>
             </a-entity>
 
 
@@ -140,7 +146,9 @@
 
     </a-scene>
 
-   
+   <script>
+
+   </script>
 </body>
 
 </html>
